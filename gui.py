@@ -13,6 +13,7 @@
 # decrypt button to decrypt messages
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
+from function import rotate
 
 
 class Ui_MainWindow(QtWidgets.QWidget):
@@ -76,14 +77,14 @@ class Ui_MainWindow(QtWidgets.QWidget):
         cipher, done3 = QtWidgets.QInputDialog.getText(
             self, 'Cipher', 'Enter your Cipher:')
 
-        Key, done4 = QtWidgets.QInputDialog.getInt(
-            self, 'Key', 'Enter your known Key:')
+        keyd, done4 = QtWidgets.QInputDialog.getInt(
+            self, 'keyd', 'Enter your known Key:')
 
         if done3 and done4:
             # Showing confirmation message along
             # with information provided by user.
             self.label.setText('\nCipher: ' + str(cipher)
-                               + '\nKey: ' + str(Key))
+                               + '\nkeyd: ' + str(keyd))
 
             # Hide the pushbutton after inputs provided by the user.
             self.pushButton.hide()
