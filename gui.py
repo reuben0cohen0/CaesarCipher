@@ -86,9 +86,9 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self.label.setText('\nCipher: ' + str(cipher)
                                + '\nkeyd: ' + str(keyd))
 
-            # Hide the pushbutton after inputs provided by the user.
-            self.pushButton.hide()
-
+            # Show the pushbutton after inputs provided by the user.
+            self.pushbutton.show()
+            self.pushButton.show()
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
