@@ -70,8 +70,9 @@ class Ui_MainWindow(QtWidgets.QWidget):
                                + str(message)
                                + '\nkey: ' + str(key))
 
-            # Hide the pushbutton after inputs provided by the user.
-            self.pushButton.hide()
+            # Show the pushbutton after inputs provided by the user.
+            self.pushbutton.show()
+            self.pushButton.show()
 
     def takeInputs(self):
         cipher, done3 = QtWidgets.QInputDialog.getText(
