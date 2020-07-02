@@ -11,7 +11,8 @@
 
 
 # decrypt button to decrypt messages
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtGui import QIcon
 import sys
 from function import rotate
 
@@ -23,14 +24,14 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         # adding pushbutton (Decrypt)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(180, 140, 93, 30))
+        self.pushButton.setGeometry(QtCore.QRect(200, 120, 100, 50))
 
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(140, 90, 221, 20))
 
         # adding pushbutton2 (Encrypt)
         self.pushbutton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushbutton.setGeometry(QtCore.QRect(100, 140, 93, 30))
+        self.pushbutton.setGeometry(QtCore.QRect(100, 120, 100, 50))
 
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(140, 90, 221, 20))
@@ -66,7 +67,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         if done1 and done2:
             # Showing confirmation message along
             # with information provided by user.
-            self.label.setText('Information stored Successfully\nMessage: '
+            self.label.setText('Here is your cipher and key: \nMessage: '
                                + str(message)
                                + '\nkey: ' + str(key))
 
@@ -84,7 +85,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
         if done3 and done4:
             # Showing confirmation message along
             # with information provided by user.
-            self.label.setText('\nCipher: ' + str(cipher)
+            self.label.setText('Here is your cipher and key: \nCipher: '
+                               + str(cipher)
                                + '\nkeyd: ' + str(keyd))
 
             # Show the pushbutton after inputs provided by the user.
