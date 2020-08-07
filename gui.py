@@ -14,6 +14,8 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 import sys
+
+from cipher import gettranslatedmessage
 from function import rotate
 
 
@@ -67,6 +69,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
         if done1 and done2:
             # Showing confirmation message along
             # with information provided by user.
+            output = gettranslatedmessage(['e'],message,key)
+            print(output)
             self.label.setText('Here is your cipher and key: \nMessage: '
                                + str(message)
                                + '\nkey: ' + str(key))
@@ -85,6 +89,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
         if done3 and done4:
             # Showing confirmation message along
             # with information provided by user.
+            output = gettranslatedmessage(['d'],cipher,keyd);
+            print(output)
             self.label.setText('Here is your cipher and key: \nCipher: '
                                + str(cipher)
                                + '\nkeyd: ' + str(keyd))

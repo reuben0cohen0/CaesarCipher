@@ -1,7 +1,6 @@
 # Caesar Cipher
 MAX_KEY_SIZE = 25
 
-
 def getmode():
     while True:
         print('Do you wish to encrypt (e) or decrypt (d) or brute force (b) a message?')
@@ -39,7 +38,7 @@ def gettranslatedmessage(mode, message, key):
             num += key
 
             if symbol.isupper():
-                if num > ord('Z'):
+                if num > ('Z'):
                     num -= 26
                 elif num < ord('A'):
                     num += 26
@@ -54,20 +53,20 @@ def gettranslatedmessage(mode, message, key):
             translated += symbol
     return translated
 
+if __name__ == "__main__":
+    mode = getmode()
+    message = getmessage()
+    if mode[0] != 'b':
+        key = getkey()
 
-mode = getmode()
-message = getmessage()
-if mode[0] != 'b':
-    key = getkey()
-
-print('Your translated text is:')
-if mode[0] != 'b':
-    print(gettranslatedmessage(mode, message, key))
-else:
-    for key in range(1, MAX_KEY_SIZE + 1):
-        print(key, gettranslatedmessage('decrypt', message, key))
-print('Would you like to do another message?')
-answer = ["yes", "Yes", "y", "Y", "no", "NO", "n", "N"]
-for x in answer:
-    if x == "yes" "Yes" "y" "Y":
-        continue
+    print('Your translated text is:')
+    if mode[0] != 'b':
+        print(gettranslatedmessage(mode, message, key))
+    else:
+        for key in range(1, MAX_KEY_SIZE + 1):
+            print(key, gettranslatedmessage('decrypt', message, key))
+    print('Would you like to do another message?')
+    answer = ["yes", "Yes", "y", "Y", "no", "NO", "n", "N"]
+    for x in answer:
+        if x == "yes" "Yes" "y" "Y":
+            continue
