@@ -40,7 +40,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         # For displaying confirmation message along with user's info.
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(170, 40, 201, 111))
+        self.label.setGeometry(QtCore.QRect(150, 40, 201, 80))
 
         # Keeping the text of label empty initially.
         self.label.setText("")
@@ -71,9 +71,10 @@ class Ui_MainWindow(QtWidgets.QWidget):
             # with information provided by user.
             output = gettranslatedmessage(['e'],message,key)
             print(output)
-            self.label.setText('Here is your cipher and key: \nMessage: '
+            self.label.setText('Here is your cipher and key: \nOriginal Message: '
                                + str(message)
-                               + '\nkey: ' + str(key))
+                               + '\nkey: ' + str(key)
+                               + '\nCiphered Message: ' + str(output))
 
             # Show the pushbutton after inputs provided by the user.
             self.pushbutton.show()
@@ -93,7 +94,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
             print(output)
             self.label.setText('Here is your cipher and key: \nCipher: '
                                + str(cipher)
-                               + '\nkeyd: ' + str(keyd))
+                               + '\nkeyd: ' + str(keyd)
+                                + '\nDecrypted Message: ' + str(output))
 
             # Show the pushbutton after inputs provided by the user.
             self.pushbutton.show()
