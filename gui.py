@@ -64,7 +64,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self, 'Message', 'Enter your Message:')
 
         key, done2 = QtWidgets.QInputDialog.getInt(
-            self, 'key', 'Enter your Key (1-25:')
+            self, 'key', 'Enter your Key (1-25:)')
 
         if done1 and done2:
             # Showing confirmation message along
@@ -72,7 +72,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
             output = gettranslatedmessage(['e'], message, key)
             self.label.setText('Here is your cipher and key: \nOriginal Message: '
                                + str(message)
-                               + '\nkey: ' + str(key)
+                               + '\nKey: ' + str(key)
                                + '\nCiphered Message: ' + str(output))
 
             # Show the pushbutton after inputs provided by the user.
@@ -92,7 +92,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
             output = gettranslatedmessage(['d'], cipher, keyd)
             self.label.setText('Here is your cipher and key: \nCipher: '
                                + str(cipher)
-                               + '\nkeyd: ' + str(keyd)
+                               + '\nKey: ' + str(keyd)
                                + '\nDecrypted Message: ' + str(output))
 
             # Show the pushbutton after inputs provided by the user.

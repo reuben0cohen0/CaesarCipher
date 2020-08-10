@@ -38,7 +38,7 @@ def gettranslatedmessage(mode, message, key):
             num += key
 
             if symbol.isupper():
-                if num > ('Z'):
+                if num > ord('Z'):
                     num -= 26
                 elif num < ord('A'):
                     num += 26
