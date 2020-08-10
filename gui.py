@@ -21,26 +21,26 @@ from function import rotate
 
 class Ui_MainWindow(QtWidgets.QWidget):
     def setupUi(self, MainWindow):
-        MainWindow.resize(422, 255)
+        MainWindow.resize(550, 300)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
 
         # adding pushbutton (Decrypt)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(200, 120, 100, 50))
+        self.pushButton.setGeometry(QtCore.QRect(280, 120, 100, 50))
 
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(140, 90, 221, 20))
 
         # adding pushbutton2 (Encrypt)
         self.pushbutton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushbutton.setGeometry(QtCore.QRect(100, 120, 100, 50))
+        self.pushbutton.setGeometry(QtCore.QRect(180, 120, 100, 50))
 
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(140, 90, 221, 20))
 
-        # For displaying confirmation message along with user's info.
+        # display cipher messages and key
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(150, 40, 201, 80))
+        self.label.setGeometry(QtCore.QRect(80, 40, 540, 80))
 
         # Keeping the text of label empty initially.
         self.label.setText("")
@@ -69,8 +69,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         if done1 and done2:
             # Showing confirmation message along
             # with information provided by user.
-            output = gettranslatedmessage(['e'],message,key)
-            print(output)
+            output = gettranslatedmessage(['e'], message, key)
             self.label.setText('Here is your cipher and key: \nOriginal Message: '
                                + str(message)
                                + '\nkey: ' + str(key)
@@ -90,12 +89,11 @@ class Ui_MainWindow(QtWidgets.QWidget):
         if done3 and done4:
             # Showing confirmation message along
             # with information provided by user.
-            output = gettranslatedmessage(['d'],cipher,keyd);
-            print(output)
+            output = gettranslatedmessage(['d'], cipher, keyd)
             self.label.setText('Here is your cipher and key: \nCipher: '
                                + str(cipher)
                                + '\nkeyd: ' + str(keyd)
-                                + '\nDecrypted Message: ' + str(output))
+                               + '\nDecrypted Message: ' + str(output))
 
             # Show the pushbutton after inputs provided by the user.
             self.pushbutton.show()
