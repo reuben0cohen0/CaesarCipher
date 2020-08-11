@@ -23,6 +23,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
     def setupUi(self, MainWindow):
         MainWindow.resize(550, 300)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.setWindowFlags(self.windowFlags() | QtCore.Qt.CustomizeWindowHint)
 
         # adding pushbutton (Decrypt)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
@@ -42,7 +43,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(80, 40, 540, 80))
 
-        # Keeping the text of label empty initially.
+        # Keeping main GUI screen initially empty
         self.label.setText("")
 
         MainWindow.setCentralWidget(self.centralwidget)
@@ -52,6 +53,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Caesar Cipher"))
+        MainWindow.setWindowIcon(QIcon('ciphericon.png'))
+        self.setWindowIcon(QIcon('ciphericon.png'))
         # Decrypt
         self.pushButton.setText(_translate("MainWindow", "Decrypt"))
         self.pushButton.clicked.connect(self.takeInputs)
@@ -67,8 +70,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self, 'key', 'Enter your Key (1-25:)')
 
         if done1 and done2:
-            # Showing confirmation message along
-            # with information provided by user.
+            # done1 and done2 = 'message and key'
+            # display results from done1 and done2, fetch output from cipher.py file
             output = gettranslatedmessage(['e'], message, key)
             self.label.setText('Here is your cipher and key: \nOriginal Message: '
                                + str(message)
