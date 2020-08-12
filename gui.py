@@ -14,6 +14,7 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 import sys
+import textwrap
 
 from cipher import gettranslatedmessage
 from function import rotate
@@ -27,6 +28,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         # adding pushbutton (Decrypt)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        # geometry (left, top, width, height)
         self.pushButton.setGeometry(QtCore.QRect(280, 120, 100, 50))
 
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -90,8 +92,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self, 'keyd', 'Enter your known Key:')
 
         if done3 and done4:
-            # Showing confirmation message along
-            # with information provided by user.
+            # done3 and done4 = 'cipher and key'
+            # display results from done3 and done4, fetch decrypted output from cipher.py file
             output = gettranslatedmessage(['d'], cipher, keyd)
             self.label.setText('Here is your cipher and key: \nCipher: '
                                + str(cipher)
