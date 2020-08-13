@@ -65,11 +65,12 @@ class Ui_MainWindow(QtWidgets.QWidget):
         self.pushbutton.clicked.connect(self.takeinputs)
 
     def takeinputs(self):
+        MAX_KEY_SIZE = 25
         message, done1 = QtWidgets.QInputDialog.getText(
             self, 'Message', 'Enter your Message:')
 
         key, done2 = QtWidgets.QInputDialog.getInt(
-            self, 'key', 'Enter your Key (1-25:)')
+            self, 'Key', 'Enter your Key (1-%s:) ' % (MAX_KEY_SIZE))
 
         if done1 and done2:
             # done1 and done2 = 'message and key'
@@ -89,7 +90,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self, 'Cipher', 'Enter your Cipher:')
 
         keyd, done4 = QtWidgets.QInputDialog.getInt(
-            self, 'keyd', 'Enter your known Key:')
+            self, 'Key', 'Enter your known Key:')
 
         if done3 and done4:
             # done3 and done4 = 'cipher and key'
