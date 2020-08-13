@@ -14,6 +14,9 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 import sys
+import textwrap
+
+from PyQt5.QtWidgets import QTextEdit, QSizePolicy
 
 from cipher import gettranslatedmessage
 
@@ -78,6 +81,10 @@ class Ui_MainWindow(QtWidgets.QWidget):
                                str(message) +
                                '\nKey: ' + str(key) +
                                '\nCiphered Message: ' + str(output))
+            self.label.setWordWrap(True)
+            self.text = QTextEdit(self)
+            self.text.setMinimumSize(50, 50)
+            self.text.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
 
             # Show the pushbutton after inputs provided by the user.
             self.pushbutton.show()
