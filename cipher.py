@@ -3,11 +3,10 @@ MAX_KEY_SIZE = 25
 
 
 def getkey():
-    key = 0
     while True:
-        print('Enter the key number (1-%s)' % (MAX_KEY_SIZE))
+        print('Enter the key number (1-%s)' % MAX_KEY_SIZE)
         key = int(input())
-        if (key >= 1 and key <= MAX_KEY_SIZE):
+        if 1 <= key <= MAX_KEY_SIZE:
             return key
         else:
             print('Please enter a key between +1 and +25')

@@ -14,16 +14,14 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 import sys
-import textwrap
 
 from cipher import gettranslatedmessage
-from function import rotate
 
 
 class Ui_MainWindow(QtWidgets.QWidget):
-    def setupUi(self, MainWindow):
-        MainWindow.resize(550, 300)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+    def setupUi(self, Mainwindow):
+        Mainwindow.resize(550, 300)
+        self.centralwidget = QtWidgets.QWidget(Mainwindow)
         self.setWindowFlags(self.windowFlags() | QtCore.Qt.CustomizeWindowHint)
 
         # adding pushbutton (Decrypt)
@@ -48,14 +46,14 @@ class Ui_MainWindow(QtWidgets.QWidget):
         # Keeping main GUI screen initially empty
         self.label.setText("")
 
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        Mainwindow.setCentralWidget(self.centralwidget)
+        self.retranslateUi(Mainwindow)
+        QtCore.QMetaObject.connectSlotsByName(Mainwindow)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, Mainwindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Caesar Cipher"))
-        MainWindow.setWindowIcon(QIcon('ciphericon.png'))
+        Mainwindow.setWindowTitle(_translate("MainWindow", "Caesar Cipher"))
+        Mainwindow.setWindowIcon(QIcon('ciphericon.png'))
         self.setWindowIcon(QIcon('ciphericon.png'))
         # Decrypt
         self.pushButton.setText(_translate("MainWindow", "Decrypt"))
@@ -70,7 +68,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self, 'Message', 'Enter your Message:')
 
         key, done2 = QtWidgets.QInputDialog.getInt(
-            self, 'Key', 'Enter your Key (1-%s:) ' % (MAX_KEY_SIZE))
+            self, 'Key', 'Enter your Key (1-%s:) ' % MAX_KEY_SIZE)
 
         if done1 and done2:
             # done1 and done2 = 'message and key'
