@@ -74,12 +74,12 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         if done1 and done2:
             # done1 and done2 = 'message and key'
-            # display results from done1 and done2, fetch output from cipher.py file
+            # results from done1 and done2, fetch output from cipher.py file
             output = gettranslatedmessage(['e'], message, key)
-            self.label.setText('Here is your cipher and key: \nOriginal Message: '
-                               + str(message)
-                               + '\nKey: ' + str(key)
-                               + '\nCiphered Message: ' + str(output))
+            self.label.setText('Your cipher and key: \nOriginal Message: ' +
+                               str(message) +
+                               '\nKey: ' + str(key) +
+                               '\nCiphered Message: ' + str(output))
 
             # Show the pushbutton after inputs provided by the user.
             self.pushbutton.show()
@@ -94,12 +94,12 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         if done3 and done4:
             # done3 and done4 = 'cipher and key'
-            # display results from done3 and done4, fetch decrypted output from cipher.py file
+            # when done3 and done4, fetch decrypted output from cipher.py file
             output = gettranslatedmessage(['d'], cipher, keyd)
-            self.label.setText('Here is your cipher and key: \nCipher: '
-                               + str(cipher)
-                               + '\nKey: ' + str(keyd)
-                               + '\nDecrypted Message: ' + str(output))
+            self.label.setText('Here is your cipher and key: \nCipher: ' +
+                               str(cipher) +
+                               '\nKey: ' + str(keyd) +
+                               '\nDecrypted Message: ' + str(output))
 
             # Show the pushbutton after inputs provided by the user.
             self.pushbutton.show()
