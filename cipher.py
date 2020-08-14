@@ -2,16 +2,6 @@
 MAX_KEY_SIZE = 25
 
 
-def getkey():
-    while True:
-        print('Enter the key number (1-%s)' % MAX_KEY_SIZE)
-        key = int(input())
-        if 1 <= key <= MAX_KEY_SIZE:
-            return key
-        else:
-            print('Please enter a key between +1 and +25')
-
-
 def gettranslatedmessage(mode, message, key):
     if mode[0] == 'd':
         key = -key

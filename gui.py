@@ -14,7 +14,6 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 import sys
-import textwrap
 
 from PyQt5.QtWidgets import QTextEdit, QSizePolicy
 
@@ -44,7 +43,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         # display cipher messages and key
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(80, 20, 400, 200))
+        self.label.setGeometry(QtCore.QRect(30, -15, 500, 200))
 
         # Keeping main GUI screen initially empty
         self.label.setText("")
@@ -79,8 +78,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
             output = gettranslatedmessage(['e'], message, key)
             self.label.setText('Your cipher and key: \nOriginal Message: ' +
                                str(message) +
-                               '\nKey: ' + str(key) +
-                               '\nCiphered Message: ' + str(output))
+                               '\n\nKey: ' + str(key) +
+                               '\n\nCiphered Message: ' + str(output))
             self.label.setWordWrap(True)
             self.text = QTextEdit(self)
             self.text.setMinimumSize(50, 50)
@@ -103,8 +102,12 @@ class Ui_MainWindow(QtWidgets.QWidget):
             output = gettranslatedmessage(['d'], cipher, keyd)
             self.label.setText('Here is your cipher and key: \nCipher: ' +
                                str(cipher) +
-                               '\nKey: ' + str(keyd) +
-                               '\nDecrypted Message: ' + str(output))
+                               '\n\nKey: ' + str(keyd) +
+                               '\n\nDecrypted Message: ' + str(output))
+            self.label.setWordWrap(True)
+            self.text = QTextEdit(self)
+            self.text.setMinimumSize(50, 50)
+            self.text.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
 
             # Show the pushbutton after inputs provided by the user.
             self.pushbutton.show()
