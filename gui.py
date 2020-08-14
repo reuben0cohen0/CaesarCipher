@@ -30,21 +30,21 @@ class Ui_MainWindow(QtWidgets.QWidget):
         # adding pushbutton (Decrypt)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         # geometry (left, top, width, height)
-        self.pushButton.setGeometry(QtCore.QRect(280, 120, 100, 50))
+        self.pushButton.setGeometry(QtCore.QRect(280, 240, 100, 50))
 
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(140, 90, 221, 20))
 
         # adding pushbutton2 (Encrypt)
         self.pushbutton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushbutton.setGeometry(QtCore.QRect(180, 120, 100, 50))
+        self.pushbutton.setGeometry(QtCore.QRect(180, 240, 100, 50))
 
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(140, 90, 221, 20))
 
         # display cipher messages and key
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(80, 40, 540, 80))
+        self.label.setGeometry(QtCore.QRect(80, 20, 400, 200))
 
         # Keeping main GUI screen initially empty
         self.label.setText("")
