@@ -12,7 +12,7 @@
 
 # decrypt button to decrypt messages
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon, QFont
 import sys
 
 from PyQt5.QtWidgets import QTextEdit, QSizePolicy
@@ -43,7 +43,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         # display cipher messages and key
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(30, -15, 500, 200))
+        self.label.setGeometry(QtCore.QRect(30, 0, 500, 250))
 
         # Keeping main GUI screen initially empty
         self.label.setText("")
@@ -60,9 +60,11 @@ class Ui_MainWindow(QtWidgets.QWidget):
         # Decrypt
         self.pushButton.setText(_translate("MainWindow", "Decrypt"))
         self.pushButton.clicked.connect(self.takeInputs)
+        self.pushButton.setFont(QFont('System', 10))
         # Encrypt
         self.pushbutton.setText(_translate("MainWindow", "Encrypt"))
         self.pushbutton.clicked.connect(self.takeinputs)
+        self.pushbutton.setFont(QFont('System', 10))
 
     def takeinputs(self):
         MAX_KEY_SIZE = 25
